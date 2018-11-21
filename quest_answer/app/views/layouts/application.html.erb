@@ -3,12 +3,14 @@
   <head>
     <title>QuestAnswer</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  	<%= link_to 'Все вопросы', posts_path %>
+  	|
+  	<%= link_to 'Новый вопрос', new_post_path %>
     <%= yield %>
   </body>
 </html>
