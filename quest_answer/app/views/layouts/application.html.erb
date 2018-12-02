@@ -3,11 +3,22 @@
   <head>
     <title>QuestAnswer</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+     <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="<%= posts_path%>">Все вопросы</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Вход</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Регистрация</a>
+      </li>
+     </ul>
   	<%= link_to 'Все вопросы', posts_path %>
   	|
   	<%= link_to 'Новый вопрос', new_post_path %>
