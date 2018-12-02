@@ -1,1 +1,8 @@
-<h2><%= link_to post.title, post_path(post) %></h2>
+<article>
+	<section>
+		<h2><%= link_to post.title, post_path(post) %></h2>
+	</section>
+	<small>
+		<time><%= post.created_at.to_date.strftime("%d %B, %Y") %></time>
+	</small>
+</article>
