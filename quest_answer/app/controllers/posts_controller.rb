@@ -13,23 +13,23 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new(post_params)
 		if @post.save
-			redirect_to @post
+			redirect_to @post, success: 'Вопрос был успешно создан'
 		else 
-			render :new
+			render :new, danger: 'Вопрос не был создан'
 		end
 	end
 	def edit
 	end
 	def 	update
 		if @post.update_attributes(post_params)
-			redirect_to @post
+			redirect_to @post, success: 'Вопрос был успешно обновлен'
 		else 
-			render :edit
+			render :edit, danger: 'Вопрос не был обновлен'
 		end
 	end
 	def destroy
 		@post.destroy
-		redirect_to posts_path
+		redirect_to posts_path, success: 'Вопрос был успешно удален'
 	end
 	private 
 	def set_post
