@@ -1,0 +1,14 @@
+ru:
+  common:
+    errors: 'При заполнении формы возникли ошибки'
+    back: 'Назад'
+  posts:
+    index:
+      title: 'Вопросы'
+    new:
+      title: 'Новый вопрос'
+    edit:
+      title: 'Редактирование вопроса'
+    form:
+      submit:
+        '%{action} вопрос'
