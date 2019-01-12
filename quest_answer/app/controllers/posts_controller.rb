@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 	end
 	def edit
 	end
-	def 	update
+	def update
 		if @post.update_attributes(post_params)
 			redirect_to @post, success: 'Вопрос был успешно обновлен'
 		else 
