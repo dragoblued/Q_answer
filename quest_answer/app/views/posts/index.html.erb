@@ -1,2 +1,4 @@
-<h1>Все вопросы</h1> 
-<%= render @posts %>
+<h1>Все вопросы</h1>
+<% @posts.each do |post| %>
+	<h2><%= post.title %></h2>
+<% end %>

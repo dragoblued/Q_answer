@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 	end
 	#показать один пост
 	def show
+		@post = Post.find(params[:id])
 	end
 	#создание нового вопроса
 	def new
