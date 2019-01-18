@@ -14,24 +14,18 @@ RSpec.describe PostsController, type: :controller do
 	  	expect(response).to be_successful
   	end
   end
-  describe "GET #new" do
-    it "returns a success response" do
-      get :new, params: {}
-      expect(response).to be_successful
-    end
-  end
-  describe "GET #edit" do
-    it "returns a success response" do
-  		post = Post.create(title: "Test title", summary: "Test content", body: "Test content")
-      get :edit, params: {id: post.to_param}
-      expect(response).to be_successful
-    end
-  end
   describe "POST #create" do
      it "creates a new Post" do
       expect {
   			post = Post.create(title: "Test title", summary: "Test content", body: "Test content")
       }.to change(Post, :count).by(1)
+    end
+  end
+  describe "POST #delete" do
+    it "delete a new Post" do
+  	  post = Post.create(title: "Test title", summary: "Test content", body: "Test content")
+      post.destroy
+      expect(Post.count).to eq(0)
     end
   end
 end
