@@ -14,11 +14,18 @@ RSpec.describe PostsController, type: :controller do
 	  	expect(response).to be_successful
   	end
   end
-  describe "POST #create" do
+  describe "POST #create valid" do
      it "creates a new Post" do
       expect {
   			post = Post.create(title: "Test title", summary: "Test content", body: "Test content")
       }.to change(Post, :count).by(1)
+    end
+  end
+  describe "POST #create invalid" do
+     it "creates a new Post (title, body)" do
+      expect {
+        post = Post.create(title: "Test title", body: "Test content")
+      }.to change(Post, :count).by(0)
     end
   end
   describe "POST #delete" do
